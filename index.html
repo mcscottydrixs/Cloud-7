@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <link rel="stylesheet" href="index.css">
+    
+    <!-- Google Fonts - Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+
+    <!-- Background video -->
+    <video autoplay muted class="background-video" id="introVideo">
+        <source src="home.mp4" type="video/mp4">
+    </video>
+
+    <!-- Play Button -->
+    <div class="play-button" id="playButton">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <polygon points="5,3 19,12 5,21" />
+        </svg>
+    </div>
+
+    <!-- Loading Spinner -->
+    <div class="loading-spinner" id="loadingSpinner"></div>
+
+    <script>
+        // Get the play button and loading spinner
+        const playButton = document.getElementById('playButton');
+        const loadingSpinner = document.getElementById('loadingSpinner');
+
+        // When the play button is clicked
+        playButton.addEventListener('click', () => {
+            // Show the spinner
+            loadingSpinner.style.display = 'block';
+
+            // Hide the play button and video
+            playButton.style.display = 'none';
+
+            // Simulate the loading process (2 seconds)
+            setTimeout(() => {
+                window.location.href = 'home.html'; // Redirect after loading
+            }, 1500); // 2 seconds delay for spinner animation
+        });
+    </script>
+
+</body>
+</html>
