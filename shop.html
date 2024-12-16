@@ -7,6 +7,25 @@
     <link rel="stylesheet" href="shop.css">
     <link rel="icon" href="logo.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <script>
+        // shop.js: Function to add product to the cart
+        function addToCart(productName, productPrice) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            // Create an object for the product being added
+            const product = {
+                name: productName,
+                price: productPrice
+            };
+
+            // Add the product to the cart
+            cart.push(product);
+
+            // Save the updated cart back to localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert('Item added to cart');
+        }
+    </script>
 </head>
 <body>
 
@@ -17,7 +36,7 @@
 
         <!-- Navbar links (on the right) -->
         <a href="home.html">Home</a>
-        <a href="shop.html">Shop</a>
+        <a href="cart.html">Cart</a>
         <a href="media.html">Media</a>
         <a href="contact.html">Contact</a>
     </div>
@@ -42,7 +61,7 @@
                 </div>
                 <h3>x7 A3 Poster</h3>
                 <p>₱999</p>
-                <a href="https://www.tinyurl.com/CLOUD7StoreEssentials" class="buy-button">Buy Now</a>
+                <a href="javascript:void(0)" class="buy-button" onclick="addToCart('x7 A3 Poster', '₱999')">Buy Now</a>
             </div>
             
             <div class="product-item">
@@ -54,7 +73,7 @@
                 </div>
                 <h3>x1 A3 Poster</h3>
                 <p>₱150</p>
-                <a href="https://www.tinyurl.com/CLOUD7StoreEssentials" class="buy-button">Buy Now</a>
+                <a href="javascript:void(0)" class="buy-button" onclick="addToCart('x1 A3 Poster', '₱150')">Buy Now</a>
             </div>
 
             <div class="product-item">
@@ -66,7 +85,7 @@
                 </div>
                 <h3>x3 A5 Poster</h3>
                 <p>₱150</p>
-                <a href="https://www.tinyurl.com/CLOUD7StoreEssentials" class="buy-button">Buy Now</a>
+                <a href="javascript:void(0)" class="buy-button" onclick="addToCart('x3 A5 Poster', '₱150')">Buy Now</a>
             </div>
 
             <div class="product-item">
@@ -82,7 +101,7 @@
                 </div>
                 <h3>x1 A5 Poster</h3>
                 <p>₱50</p>
-                <a href="https://www.tinyurl.com/CLOUD7StoreEssentials" class="buy-button">Buy Now</a>
+                <a href="javascript:void(0)" class="buy-button" onclick="addToCart('x1 A5 Poster', '₱50')">Buy Now</a>
             </div>
         </div>
 
@@ -93,31 +112,31 @@
                 <img src="mug.png" alt="Mug Cup">
                 <h3>Mug Cup</h3>
                 <p>₱399</p>
-                <a href="https://www.tinyurl.com/CLOUD7StoreEssentials" class="buy-button">Buy Now</a>
+                <a href="javascript:void(0)" class="buy-button" onclick="addToCart('Mug Cup', '₱399')">Buy Now</a>
             </div>
             <div class="product-item">
                 <img src="tumbler.png" alt="Shake Tumbler">
                 <h3>Shake Tumbler</h3>
                 <p>₱299</p>
-                <a href="https://www.tinyurl.com/CLOUD7StoreEssentials" class="buy-button">Buy Now</a>
+                <a href="javascript:void(0)" class="buy-button" onclick="addToCart('Shake Tumbler', '₱299')">Buy Now</a>
             </div>
             <div class="product-item">
                 <img src="lunchbox.png" alt="Lunch Box">
                 <h3>Lunch Box</h3>
                 <p>₱399</p>
-                <a href="https://www.tinyurl.com/CLOUD7StoreEssentials" class="buy-button">Buy Now</a>
+                <a href="javascript:void(0)" class="buy-button" onclick="addToCart('Lunch Box', '₱399')">Buy Now</a>
             </div>
             <div class="product-item">
                 <img src="notebook.png" alt="Notebook">
                 <h3>Notebook</h3>
                 <p>₱249</p>
-                <a href="https://www.tinyurl.com/CLOUD7StoreEssentials" class="buy-button">Buy Now</a>
+                <a href="javascript:void(0)" class="buy-button" onclick="addToCart('Notebook', '₱249')">Buy Now</a>
             </div>
             <div class="product-item">
                 <img src="ballpen.png" alt="Ballpen">
                 <h3>Ballpen</h3>
                 <p>₱79</p>
-                <a href="https://www.tinyurl.com/CLOUD7StoreEssentials" class="buy-button">Buy Now</a>
+                <a href="javascript:void(0)" class="buy-button" onclick="addToCart('Ballpen', '₱79')">Buy Now</a>
             </div>
         </div>
 
@@ -129,18 +148,18 @@
                 <h3>Lucky VIP</h3>
                 <p>₱999</p>
                 <p>Signed Posters, Free Merch + Get a chance to get a necklace from your bias!</p><br>
-                <a href="https://forms.gle/NpqDTrcKqUCsKBmr9" class="buy-button">Buy Now</a>
+                <a href="javascript:void(0)" class="buy-button" onclick="addToCart('Lucky VIP', '₱999')">Buy Now</a>
             </div>
-            <div class="product-grid">
-                <div class="product-item">
-                    <img src="regular.png" alt="VIP Access">
-                    <h3>Early Birds</h3>
-                    <p>FREE</p>
-                    <p>Register and attend early to secure a spot! VIP ticket holders get prioritized</p><br>
-                    <a href="https://forms.gle/NpqDTrcKqUCsKBmr9" class="buy-button">Register</a>
-                </div>
+            <div class="product-item">
+                <img src="regular.png" alt="VIP Access">
+                <h3>Early Birds</h3>
+                <p>FREE</p>
+                <p>Register and attend early to secure a spot! VIP ticket holders get prioritized</p><br>
+                <a href="javascript:void(0)" class="buy-button" onclick="addToCart('Early Birds', 'FREE')">Register</a>
+            </div>
         </div>
     </div>
+
     <img src="footeri.png" alt="Decorative Image" class="footer-top-image">
     <footer>
         <div class="footer-logo">
@@ -161,14 +180,10 @@
             <a href="https://music.apple.com/ph/artist/cloud-7/1703707560" target="_blank"><img src="am.png" alt="Apple Music"></a>
             <a href="https://www.youtube.com/@cloud7_ph" target="_blank"><img src="yt.png" alt="YouTube"></a>
             <a href="https://open.spotify.com/artist/5Lgt6On8CUSHVsY1uCaMPF?si=3eNTNVUOT7qeYWzYx-xtAg" target="_blank"><img src="sp.png" alt="Spotify"></a>
-
             <a href="https://www.facebook.com/@cloud7.official" target="_blank"><img src="fb.png" alt="Facebook"></a>
             <a href="https://www.instagram.com/cloud7_ph" target="_blank"><img src="ig.png" alt="Instagram"></a>
-            <a href="https://twitter.com/cloud7_ph" target="_blank"><img src="tx.png" alt="Twitter"></a>
-            <a href="https://www.tiktok.com/@cloud7_ph" target="_blank"><img src="tt.png" alt="TikTok"></a>
         </div>
     </footer>
 
-    <script src="shop.js"></script>
 </body>
 </html>
