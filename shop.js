@@ -48,11 +48,31 @@ function removeFromCart(index) {
     updateCartDisplay();
 }
 
-function checkout() {
+async function checkout() {
     if (cart.length > 0) {
-        alert('Checkout successful! Your total is: ₱' + cart.reduce((sum, item) => sum + item.price, 0));
-        cart = []; // Clear the cart
-        updateCartDisplay(); // Update the cart display
+        try {
+            // Send cart data to the server
+            const response = await fetch('http://localhost:3000/checkout', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ cart: cart })
+            });
+
+            const result = await response.json();
+
+            if (response.ok) {
+                alert('Checkout successful! Your total is: ₱' + result.total);
+                cart = []; // Clear the cart
+                updateCartDisplay(); // Update the cart display
+            } else {
+                alert('Checkout failed: ' + result.message);
+            }
+        } catch (error) {
+            console.error('Error during checkout:', error);
+            alert('An error occurred. Please try again.');
+        }
     } else {
         alert('Your cart is empty!');
     }
