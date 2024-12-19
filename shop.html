@@ -7,25 +7,6 @@
     <link rel="stylesheet" href="shop.css">
     <link rel="icon" href="logo.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <script>
-        // shop.js: Function to add product to the cart
-        function addToCart(productName, productPrice) {
-            let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-            // Create an object for the product being added
-            const product = {
-                name: productName,
-                price: productPrice
-            };
-
-            // Add the product to the cart
-            cart.push(product);
-
-            // Save the updated cart back to localStorage
-            localStorage.setItem('cart', JSON.stringify(cart));
-            alert('Item added to cart');
-        }
-    </script>
 </head>
 <body>
 
@@ -184,6 +165,6 @@
             <a href="https://www.instagram.com/cloud7_ph" target="_blank"><img src="ig.png" alt="Instagram"></a>
         </div>
     </footer>
-
+    <script src= "shop.js" ></script>
 </body>
 </html>

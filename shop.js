@@ -9,6 +9,24 @@ document.querySelectorAll('.carousel-container').forEach(container => {
     }, 7000);
 });
 
+// shop.js: Function to add product to the cart
+function addToCart(productName, productPrice) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Create an object for the product being added
+    const product = {
+        name: productName,
+        price: productPrice
+    };
+
+    // Add the product to the cart
+    cart.push(product);
+
+    // Save the updated cart back to localStorage
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert('Item added to cart');
+}
+
 let cart = [];
 
 function addToCart(itemName, itemPrice, itemImage) {
